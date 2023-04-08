@@ -1,9 +1,16 @@
-<%= form_for([@question, answer]) do |f| %>
+<%= form_for @question do |f| %>
+<label for="theme-input">Theme or keyword:</label>
+<input type="text" id="theme-input" name="theme">
   <p>
-    <%= f.label :content %><br>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %>
     <%= f.text_area :content %>
   </p>
   <p>
     <%= f.submit %>
   </p>
+  <div id="generated-text"></div>
 <% end %>
